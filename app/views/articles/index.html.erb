@@ -1,0 +1,18 @@
+<div class="px-5 bg-light">
+  <nav class="navbar ">
+    <div class="navbar-brand">
+      Vicky Wiki
+    </div>
+    <div class="btn btn-light">
+      <%= link_to "New Article", new_article_path, class: "text-decoration-none text-reset"  %>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <ul class="mx-20">
+    <% @articles.each do |article| %>
+      <li><%= link_to article.title, article_path(article)  %></li>
+      <li><%= article.content[0...20] %>...</li>
+    <% end %>
+  </ul>
+</div>
